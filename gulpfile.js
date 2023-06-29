@@ -72,10 +72,11 @@ function scripts() {
 }
 
 function styles() {
-  return src('app/scss/styles.scss')
+  return src('app/scss/**/*.scss')
   .pipe(concat('styles.min.css'))
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(dest('app/css'))
+  .pipe(scss().on('error', scss.logError))
   .pipe(browserSync.stream())
 }
 
@@ -85,7 +86,7 @@ function watching() {
         baseDir: "app/"
     }
 });
-  watch(['app/scss/styles.scss'], styles)
+  watch(['app/scss/**/*scss'], styles)
   watch(['app/images/src'], images)
   watch(['app/js/main.js'], scripts)
   watch(['app/components/*', 'app/pages/*'], pages)
