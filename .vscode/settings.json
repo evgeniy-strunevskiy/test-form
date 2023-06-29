@@ -5,6 +5,7 @@
     "Csvg",
     "fixsvgstack",
     "fonter",
+    "necolas",
     "prolyfill",
     "webp"
   ]
