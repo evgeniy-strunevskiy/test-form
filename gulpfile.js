@@ -13,6 +13,15 @@ const newer = require('gulp-newer')
 const fonter = require('gulp-fonter')
 const ttf2woff = require('gulp-ttf2woff')
 const svgSprite = require('gulp-svg-sprite')
+const include = require('gulp-include')
+
+function pages() {
+  return src('app/pages/*.html')
+  .pipe(include({
+    includePaths: 'app/components' 
+  }))
+  .pipe(dest('app'))
+}
 
 function fonts() {
   return src('app/fonts/src/*.*')
@@ -79,6 +88,7 @@ function watching() {
   watch(['app/scss/styles.scss'], styles)
   watch(['app/images/src'], images)
   watch(['app/js/main.js'], scripts)
+  watch(['app/components/*', 'app/pages/*'], pages)
   watch(['app/*.html']).on('change', browserSync.reload)
 }
 
@@ -105,9 +115,10 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.watching = watching;
 exports.fonts = fonts;
+exports.pages = pages;
 exports.images = images;
 exports.sprite = sprite;
 exports.building = building;
 exports.build = series(cleanDist, building);
 
-exports.default = parallel(styles, scripts, watching)
+exports.default = parallel(styles, scripts, pages, watching)
