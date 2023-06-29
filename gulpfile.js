@@ -78,7 +78,7 @@ function watching() {
 });
   watch(['app/scss/styles.scss'], styles)
   watch(['app/images/src'], images)
-  watch(['app/js/main.js'], styles)
+  watch(['app/js/main.js'], scripts)
   watch(['app/*.html']).on('change', browserSync.reload)
 }
 
