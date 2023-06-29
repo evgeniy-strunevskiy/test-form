@@ -4,6 +4,7 @@
     "Cpath",
     "Csvg",
     "fixsvgstack",
+    "fonter",
     "prolyfill",
     "webp"
   ]

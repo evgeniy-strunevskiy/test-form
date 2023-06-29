@@ -10,7 +10,19 @@ const avif = require('gulp-avif')
 const webp = require('gulp-webp')
 const imagemin = require('gulp-imagemin')
 const newer = require('gulp-newer')
+const fonter = require('gulp-fonter')
+const ttf2woff = require('gulp-ttf2woff')
 const svgSprite = require('gulp-svg-sprite')
+
+function fonts() {
+  return src('app/fonts/src/*.*')
+    .pipe(fonter({
+      formats: ['woff', 'ttf']
+    }))
+    .pipe(src('app/fonts/*.ttf'))
+    .pipe(ttf2woff())
+    .pipe(dest('app/fonts'))
+}
 
 function images() {
   return src(['app/images/src/*.*', '!app/images/src/*.svg'])
@@ -80,6 +92,9 @@ function building() {
   return src([
     'app/css/styles.min.css',
     'app/images/dist/*.*',
+    '!app/images/dist/*.svg',
+    'app/images/dist/sprite.svg',
+    'app/fonts/*.*',
     'app/js/main.min.js',
     'app/index.html'
   ], {base: 'app'})
@@ -89,8 +104,10 @@ function building() {
 exports.styles = styles;
 exports.scripts = scripts;
 exports.watching = watching;
+exports.fonts = fonts;
 exports.images = images;
 exports.sprite = sprite;
+exports.building = building;
 exports.build = series(cleanDist, building);
 
 exports.default = parallel(styles, scripts, watching)
