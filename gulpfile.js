@@ -35,22 +35,22 @@ function fonts() {
 
 function images() {
   return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-  .pipe(newer('app/images/dist'))
+  .pipe(newer('app/images'))
   .pipe(avif({quality: 50}))
   
   .pipe(src('app/images/src/*.*'))
-  .pipe(newer('app/images/dist'))
+  .pipe(newer('app/images'))
   .pipe(webp())
   
   .pipe(src('app/images/src/*.*'))
-  .pipe(newer('app/images/dist'))
+  .pipe(newer('app/images'))
   .pipe(imagemin())
 
-  .pipe(dest('app/images/dist'))
+  .pipe(dest('app/images'))
 }
 
 function sprite() {
-  return src('app/images/dist/*.svg')
+  return src('app/images/*.svg')
   .pipe(svgSprite({
     mode: {
       stack: {
@@ -59,7 +59,7 @@ function sprite() {
       }
     }
   }))
-  .pipe(dest('app/images/dist'))
+  .pipe(dest('app/images'))
 }
 
 function scripts() {
@@ -101,9 +101,9 @@ function cleanDist() {
 function building() {
   return src([
     'app/css/styles.min.css',
-    'app/images/dist/*.*',
-    '!app/images/dist/*.svg',
-    'app/images/dist/sprite.svg',
+    'app/images/*.*',
+    '!app/images/*.svg',
+    'app/images/sprite.svg',
     'app/fonts/*.*',
     'app/js/main.min.js',
     'app/index.html'
