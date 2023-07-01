@@ -1,17 +1,18 @@
 .form {
   flex: 1;
-  padding: 20px 38px 22px 32px;
+  padding: 35px 18px 33px 23px;
 }
 
 .form__title {
   font-size: 22px;
   font-weight: 500;
+  margin-bottom: -3px;
 }
 
 .form__lid {
   font-size: 14px;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .form__content {
@@ -25,14 +26,14 @@
   display: flex;
   gap: 15px;
   &_sign {
-    padding-top: 82px;
+    padding-top: 85px;
   }
 }
 
 .form__column {
   flex: 1;
-  display: flex;
   &_btn {
+    display: flex;
     justify-content: end;
   }
 }

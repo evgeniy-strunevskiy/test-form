@@ -1,4 +1,5 @@
 .input {
+  min-width: fit-content;
   width: 100%;
 }
 
@@ -9,12 +10,15 @@
 }
 
 .input__elem {
-  padding: 4px 0 6px 0;
+  width: 100%;
+  padding-bottom: 3.5px;
   border-bottom: 0.7px solid #7C7C7C;
   &::placeholder {
+    font-size: 14px;
     color: var(--color-black);
   }
   &_select {
+    font-size: 14px;
     width: 100%;
   }
 }
