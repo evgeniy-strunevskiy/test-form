@@ -64,7 +64,6 @@ function sprite() {
 
 function scripts() {
   return src('app/js/main.js')
-    .pipe(autoprefixer({overrideBrowserList: ['Last 10 version']}))
     .pipe(concat('main.min.js'))
     .pipe(uglify())
     .pipe(dest('app/js'))
@@ -73,6 +72,7 @@ function scripts() {
 
 function styles() {
   return src('app/scss/**/*.scss')
+  .pipe(autoprefixer({overrideBrowserList: ['Last 10 version']}))
   .pipe(concat('styles.min.css'))
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(dest('app/css'))
