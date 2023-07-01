@@ -1,0 +1,109 @@
+<div class="form">
+  <div class="form__title">New user?</div>
+  <div class="form__lid">Use the form below to create your account.</div>
+  <form class="form__content">
+    <div class="form__row">
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">First Name</div>
+          <input type="text" class="input__elem" placeholder="Alice">
+        </label>
+      </div>
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">Last Name</div>
+          <input type="text" class="input__elem" placeholder="Miller">
+        </label>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">Nationality</div>
+          <select class="input__elem input__elem_select">
+            <option value="American">American</option>
+            <option value="American">Canadian</option>
+          </select>
+        </label>
+      </div>
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">E-mail</div>
+          <input type="email" class="input__elem" placeholder="alice.miller@yahoo.com">
+        </label>
+      </div>
+    </div>
+    <div class="form__row">
+      <div class="form__column form__column_birth">
+        <div class="input__text" id="form">Date of Birth</div>
+        <div class="form__birthday">
+          <label class="input">
+            <select class="input__elem input__elem_select">
+              <option value="American">21</option>
+              <option value="American">22</option>
+            </select>
+          </label>
+          <label class="input">
+            <select class="input__elem input__elem_select">
+              <option value="American">December</option>
+              <option value="American">November</option>
+            </select>
+          </label>
+          <label class="input">
+            <select class="input__elem input__elem_select">
+              <option value="American">1995</option>
+              <option value="American">1996</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="form__column">
+        <div class="radio">
+          <div class="radio__name">Gender</div>
+          <div class="radio__container">
+            <label class="radio__btn">
+              <input name="photo" type="radio" class="radio__hidden-elem">
+              <div class="radio__content">
+                <div class="radio__show-elem"></div>
+                <div class="radio__answer">Male</div>
+              </div>
+            </label>
+            <label class="radio__btn">
+              <input name="photo" type="radio" class="radio__hidden-elem">
+              <div class="radio__content">
+                <div class="radio__show-elem"></div>
+                <div class="radio__answer">Female</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">Password</div>
+          <input type="password" class="input__elem">
+        </label>
+      </div>
+      <div class="form__column">
+        <label class="input">
+          <div class="input__text" id="form">Confirm Password</div>
+          <input type="password" class="input__elem">
+        </label>
+      </div>
+    </div>
+    <div class="form__row form__row_sign">
+      <div class="form__column">
+        <div class="form__account">
+          Have an account?
+          <a href="" class="form__login">Login</a>
+        </div>
+      </div>
+      <div class="form__column form__column_btn">
+        <!--=include button.html -->
+      </div>
+    </div>
+  </form>
+</div>

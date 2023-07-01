@@ -8,5 +8,8 @@
     "necolas",
     "prolyfill",
     "webp"
+  ],
+  "cSpell.ignoreWords": [
+    "Обнуление"
   ]
 }
