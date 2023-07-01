@@ -28,6 +28,9 @@
   &_sign {
     padding-top: 85px;
   }
+  @media (max-width: 865px) {
+    flex-direction: column;
+  }
 }
 
 .form__column {
@@ -35,11 +38,17 @@
   &_btn {
     display: flex;
     justify-content: end;
+    @media (max-width: 865px) {
+      justify-content: start;
+    }
   }
 }
 
 .form__birthday {
   display: flex;
+  @media (max-width: 865px) {
+    flex-direction: column;
+  }
 }
 
 .form__account {
