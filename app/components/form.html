@@ -6,13 +6,15 @@
       <div class="form__column">
         <label class="input">
           <div class="input__text" id="form">First Name</div>
-          <input type="text" class="input__elem" placeholder="Alice" required>
+          <input type="text" class="input__elem" name="name" placeholder="Alice" required>
+          <div class="error"></div>
         </label>
       </div>
       <div class="form__column">
         <label class="input">
           <div class="input__text" id="form">Last Name</div>
-          <input type="text" class="input__elem" placeholder="Miller" required>
+          <input type="text" class="input__elem" name="lastName" placeholder="Miller" required>
+          <div class="error"></div>
         </label>
       </div>
     </div>
@@ -20,7 +22,7 @@
       <div class="form__column">
         <label class="input">
           <div class="input__text" id="form">Nationality</div>
-          <select class="input__elem input__elem_select">
+          <select class="input__elem input__elem_select" name="nationality">
             <option value="American">American</option>
             <option value="American">Canadian</option>
           </select>
@@ -30,6 +32,7 @@
         <label class="input">
           <div class="input__text" id="form">E-mail</div>
           <input type="email" class="input__elem" name="email" placeholder="alice.miller@yahoo.com">
+          <div class="error"></div>
         </label>
       </div>
     </div>
@@ -38,21 +41,21 @@
         <div class="input__text" id="form">Date of Birth</div>
         <div class="form__birthday">
           <label class="input">
-            <select class="input__elem input__elem_select">
-              <option value="American">21</option>
-              <option value="American">22</option>
+            <select class="input__elem input__elem_select" name="day">
+              <option value="21" selected="selected">21</option>
+              <option value="22">22</option>
             </select>
           </label>
           <label class="input">
-            <select class="input__elem input__elem_select">
-              <option value="American">December</option>
-              <option value="American">November</option>
+            <select class="input__elem input__elem_select" name="month">
+              <option value="December" selected="selected">December</option>
+              <option value="November">November</option>
             </select>
           </label>
           <label class="input">
-            <select class="input__elem input__elem_select">
-              <option value="American">1995</option>
-              <option value="American">1996</option>
+            <select class="input__elem input__elem_select" name="year">
+              <option value="1995" selected="selected">1995</option>
+              <option value="1996">1996</option>
             </select>
           </label>
         </div>
@@ -62,14 +65,14 @@
           <div class="radio__name">Gender</div>
           <div class="radio__container">
             <label class="radio__btn">
-              <input name="photo" type="radio" class="radio__hidden-elem">
+              <input type="radio" class="radio__hidden-elem" value="male" name="gender">
               <div class="radio__content">
                 <div class="radio__show-elem"></div>
                 <div class="radio__answer">Male</div>
               </div>
             </label>
             <label class="radio__btn">
-              <input name="photo" type="radio" class="radio__hidden-elem">
+              <input type="radio" class="radio__hidden-elem" value="female" name="gender" checked>
               <div class="radio__content">
                 <div class="radio__show-elem"></div>
                 <div class="radio__answer">Female</div>
@@ -83,13 +86,15 @@
       <div class="form__column">
         <label class="input">
           <div class="input__text" id="form" >Password</div>
-          <input type="password" class="input__elem" required>
+          <input type="password" class="input__elem" name="password" required>
+          <div class="error"></div>
         </label>
       </div>
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form">Confirm Password</div>
-          <input type="password" class="input__elem" required>
+          <div class="input__text" id="form" >Confirm Password</div>
+          <input type="password" class="input__elem" name="confirmPassword" required>
+          <div class="error"></div>
         </label>
       </div>
     </div>
@@ -101,7 +106,6 @@
         </div>
       </div>
       <div class="form__column form__column_btn">
-        
         <!--=include button.html -->
       </div>
     </div>
