@@ -5,14 +5,14 @@
     <div class="form__row">
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form">First Name</div>
+          <div class="input__text" >First Name</div>
           <input type="text" class="input__elem" name="name" placeholder="Alice" required>
           <div class="error"></div>
         </label>
       </div>
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form">Last Name</div>
+          <div class="input__text" >Last Name</div>
           <input type="text" class="input__elem" name="lastName" placeholder="Miller" required>
           <div class="error"></div>
         </label>
@@ -21,58 +21,59 @@
     <div class="form__row">
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form">Nationality</div>
+          <div class="input__text" >Nationality</div>
           <select class="input__elem input__elem_select" name="nationality">
-            <option value="American">American</option>
+            <option value="" disabled selected>Choose Nationality</option>
             <option value="American">Canadian</option>
           </select>
         </label>
       </div>
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form">E-mail</div>
-          <input type="email" class="input__elem" name="email" placeholder="alice.miller@yahoo.com">
+          <div class="input__text">E-mail</div>
+          <input type="email" class="input__elem" name="email" placeholder="alice.miller@yahoo.com" required>
           <div class="error"></div>
         </label>
       </div>
     </div>
     <div class="form__row">
       <div class="form__column form__column_birth">
-        <div class="input__text" id="form">Date of Birth</div>
+        <div class="input__text">Date of Birth</div>
         <div class="form__birthday">
           <label class="input">
-            <select class="input__elem input__elem_select" name="day">
-              <option value="21" selected="selected">21</option>
+            <select class="input__elem input__elem_select" name="day" class="birth" >
+              <option value="21" disabled selected>day</option>
               <option value="22">22</option>
             </select>
           </label>
           <label class="input">
-            <select class="input__elem input__elem_select" name="month">
-              <option value="December" selected="selected">December</option>
+            <select class="input__elem input__elem_select" name="month" class="birth" >
+              <option value="" disabled selected> month</option>
               <option value="November">November</option>
             </select>
           </label>
           <label class="input">
-            <select class="input__elem input__elem_select" name="year">
-              <option value="1995" selected="selected">1995</option>
+            <select class="input__elem input__elem_select" name="year" class="birth" >
+              <option value="" disabled selected> year</option>
               <option value="1996">1996</option>
             </select>
           </label>
         </div>
+        <div class="error"></div>
       </div>
       <div class="form__column">
         <div class="radio">
           <div class="radio__name">Gender</div>
           <div class="radio__container">
             <label class="radio__btn">
-              <input type="radio" class="radio__hidden-elem" value="male" name="gender">
+              <input type="radio" class="radio__hidden-elem" value="male" name="gender" >
               <div class="radio__content">
                 <div class="radio__show-elem"></div>
                 <div class="radio__answer">Male</div>
               </div>
             </label>
             <label class="radio__btn">
-              <input type="radio" class="radio__hidden-elem" value="female" name="gender" checked>
+              <input type="radio" class="radio__hidden-elem" value="female" name="gender" >
               <div class="radio__content">
                 <div class="radio__show-elem"></div>
                 <div class="radio__answer">Female</div>
@@ -85,14 +86,14 @@
     <div class="form__row">
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form" >Password</div>
+          <div class="input__text">Password</div>
           <input type="password" class="input__elem" name="password" required>
           <div class="error"></div>
         </label>
       </div>
       <div class="form__column">
         <label class="input">
-          <div class="input__text" id="form" >Confirm Password</div>
+          <div class="input__text">Confirm Password</div>
           <input type="password" class="input__elem" name="confirmPassword" required>
           <div class="error"></div>
         </label>

@@ -1,23 +1,24 @@
-const regEmail =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regName = /^([a-zA-Z]+|[а-яА-ЯёЁ]+)$/;
 const regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
-const validName = 'The name must contain only letters';
-const validEmail = 'email should be like this alice.miller@yahoo.com'
-const validPassword = 'The user password must contain at least 8 characters, uppercase and lowercase letters, and numbers'
-const validConfirmPassword = 'Password mismatch';
-
-const handleError = (field, valid) => {
-  field.nextElementSibling.textContent = valid;
-  field.style.color = "red";
-  field.style.borderBottom = "1px solid red";;
-} 
+const validName = "The name must contain only letters";
+const validLastName = "The last name must contain only letters";
+const validEmail = "email should be like this alice.miller@yahoo.com";
+const validPassword =
+  "The user password must contain at least 8 characters, uppercase and lowercase letters, and numbers";
+const validConfirmPassword = "Password mismatch";
+const validBirth = "Fill in the date of birth";
+const validGender = "select gender";
+const validNationality = "select nationality";
 
 const form = document.querySelector("#form");
 const send = document.querySelector("#send");
 
 send.addEventListener("click", (event) => {
   event.preventDefault();
+
+  let valid = true;
 
   const data = {
     name: "",
@@ -34,72 +35,96 @@ send.addEventListener("click", (event) => {
     confirmPassword: null,
   };
 
+  const handleError = (field, validText) => {
+    console.log(field.name)
+    valid = false;
+      field.nextElementSibling.textContent = validText;
+      field.style.color = "red";
+      field.style.borderBottom = "1px solid red";
+  };
+
+  const handleField = (field) => {
+    data[field.name] = field.value;
+    if (field.tagName === "INPUT") {
+      field.nextElementSibling.textContent = "";
+      field.style.borderBottom = "1px solid black";
+    }
+  };
+
   if (!regName.test(form.elements.name.value)) {
-    handleError(form.elements.name, validName)
+    handleError(form.elements.name, validName);
   } else {
-    data.name = form.elements.name.value;
-    form.elements.name.nextElementSibling.textContent = '';
+    handleField(form.elements.name);
   }
 
   if (!regName.test(form.elements.lastName.value)) {
-    handleError(form.elements.lastName, validName)
+    handleError(form.elements.lastName, validLastName);
   } else {
-    data.lastName = form.elements.lastName.value;
-    form.elements.lastName.nextElementSibling.textContent = '';
-
+    handleField(form.elements.lastName);
   }
 
-  if (!form.elements.nationality.value) {
-    console.log("no nationality");
-  } else {
-    data.nationality = form.elements.nationality.value;
-
+  if (form.elements.nationality.value) {
+    handleField(form.elements.nationality);
   }
 
-  if (!form.elements.gender.value) {
-    console.log("no gender");
-  } else {
-    data.gender = form.elements.gender.value;
+  if (form.elements.gender.value) {
+    handleField(form.elements.gender);
   }
 
   if (!regEmail.test(form.elements.email.value)) {
-    handleError(form.elements.email, validEmail)
+    handleError(form.elements.email, validEmail);
   } else {
-    data.email = form.elements.email.value;
-    form.elements.email.nextElementSibling.textContent = '';
+    handleField(form.elements.email);
   }
 
-  if (!form.elements.day.value) {
-    console.log("no day");
-  } else {
-    data.birth.day = form.elements.day.value;
+  if (form.elements.day.value) {
+    handleField(form.elements.day);
   }
-  if (!form.elements.month.value) {
-    console.log("no month");
-  } else {
-    data.birth.month = form.elements.month.value;
+
+  if (form.elements.month.value) {
+    handleField(form.elements.month);
   }
-  if (!form.elements.year.value) {
-    console.log("no year");
-  } else {
-    data.birth.year = form.elements.year.value;
+
+  if (form.elements.year.value) {
+    handleField(form.elements.year);
   }
 
   if (!regPassword.test(form.elements.password.value)) {
-    handleError(form.elements.password, validPassword)
+    handleError(form.elements.password, validPassword);
   } else {
-    data.password = form.elements.password.value;
-    form.elements.password.nextElementSibling.textContent = '';
+    handleField(form.elements.password);
   }
 
-if (
-    form.elements.password.value !== form.elements.confirmPassword.value
-    ) {
-      handleError(form.elements.password, validConfirmPassword)
+  const passwordComparison = form.elements.password.value !== form.elements.confirmPassword.value
+
+  if (!regPassword.test(form.elements.password.value) || passwordComparison) {
+    handleError(form.elements.confirmPassword, validConfirmPassword);
   } else {
-    data.confirmPassword = form.elements.confirmPassword.value;
-    form.elements.confirmPassword.nextElementSibling.textContent = '';
+    handleField(form.elements.confirmPassword);
   }
 
-  console.log(data);
+  async function sendData() {
+    try {
+      let response = await fetch("http://localhost:3001/points", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Ошибка при отправке данных");
+      }
+
+      const responseData = await response.json();
+      console.log("Данные успешно отправлены:", responseData);
+    } catch (error) {
+      console.error("Произошла ошибка:", error);
+    }
+  }
+
+  if (valid) {
+    sendData();
+    form.reset();
+  }
+
 });
