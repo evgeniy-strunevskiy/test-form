@@ -1,4 +1,52 @@
 {
   "points": [
+    {
+      "name": "sdf",
+      "lastName": "sdf",
+      "nationality": "",
+      "email": "esstrunevskiy@gmail.com",
+      "gender": null,
+      "birth": {
+        "day": null,
+        "month": null,
+        "year": null
+      },
+      "password": "12345678Ss",
+      "confirmPassword": "12345678Ss",
+      "day": "21",
+      "id": 1
+    },
+    {
+      "name": "sdf",
+      "lastName": "sdf",
+      "nationality": "American",
+      "email": "esstrunevskiy@gmail.com",
+      "gender": null,
+      "birth": {
+        "day": null,
+        "month": null,
+        "year": null
+      },
+      "password": "12345678Ss",
+      "confirmPassword": "12345678Ss",
+      "day": "21",
+      "id": 2
+    },
+    {
+      "name": "sdf",
+      "lastName": "sdf",
+      "nationality": "",
+      "email": "esstrunevskiy@gmail.com",
+      "gender": null,
+      "birth": {
+        "day": null,
+        "month": null,
+        "year": null
+      },
+      "password": "12345678Ss",
+      "confirmPassword": "12345678Ss",
+      "day": "21",
+      "id": 3
+    }
   ]
 }

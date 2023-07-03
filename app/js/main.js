@@ -15,6 +15,9 @@ const validNationality = "select nationality";
 const form = document.querySelector("#form");
 const send = document.querySelector("#send");
 
+const formComponent = document.querySelector(".form");
+const successComponent = document.querySelector(".success");
+
 send.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -115,8 +118,9 @@ send.addEventListener("click", (event) => {
         throw new Error("Ошибка при отправке данных");
       }
 
-      const responseData = await response.json();
-      console.log("Данные успешно отправлены:", responseData);
+      formComponent.style.display = 'none';
+      successComponent.style.display = 'block';
+
     } catch (error) {
       console.error("Произошла ошибка:", error);
     }
