@@ -1,0 +1,45 @@
+.animation {
+  opacity: 0;
+
+  position: relative;
+  animation: intro .1s ease-in-out;
+  animation-fill-mode: forwards;
+  
+  
+  &_name {
+    animation-delay: .2s;
+  }
+  &_lastName {
+    animation-delay: .3s;
+  }
+  &_nationality {
+    animation-delay: .4s;
+  }
+  &_email {
+    animation-delay: .5s;
+  }
+  &_birth {
+    animation-delay: .6s;
+  }
+  &_gender {
+    animation-delay: .7s;
+  }
+  &_password {
+    animation-delay: .8s;
+  }
+  &_confirmPassword {
+    animation-delay: .9s;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    top: 030px;
+  }
+  
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}

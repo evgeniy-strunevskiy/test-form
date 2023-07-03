@@ -18,14 +18,14 @@
         <div class="form__lid">Use the form below to create your account.</div>
         <form id="form" class="form__content">
           <div class="form__row">
-            <div class="form__column">
+            <div class="form__column animation animation_name">
               <label class="input">
                 <div class="input__text" >First Name</div>
                 <input type="text" class="input__elem" name="name" placeholder="Alice" required>
                 <div class="error"></div>
               </label>
             </div>
-            <div class="form__column">
+            <div class="form__column animation animation_lastName">
               <label class="input">
                 <div class="input__text" >Last Name</div>
                 <input type="text" class="input__elem" name="lastName" placeholder="Miller" required>
@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="form__row">
-            <div class="form__column">
+            <div class="form__column animation animation_nationality">
               <label class="input">
                 <div class="input__text" >Nationality</div>
                 <select class="input__elem input__elem_select" name="nationality">
@@ -43,7 +43,7 @@
                 </select>
               </label>
             </div>
-            <div class="form__column">
+            <div class="form__column animation animation_email">
               <label class="input">
                 <div class="input__text">E-mail</div>
                 <input type="email" class="input__elem" name="email" placeholder="alice.miller@yahoo.com" required>
@@ -52,8 +52,8 @@
             </div>
           </div>
           <div class="form__row">
-            <div class="form__column form__column_birth">
-              <div class="input__text">Date of Birth</div>
+            <div class="form__column animation animation_birth" >
+              <div class="input__title">Date of Birth</div>
               <div class="form__birthday">
                 <label class="input">
                   <select class="input__elem input__elem_select" name="day" class="birth" >
@@ -76,7 +76,7 @@
               </div>
               <div class="error"></div>
             </div>
-            <div class="form__column">
+            <div class="form__column animation animation_gender">
               <div class="radio">
                 <div class="radio__name">Gender</div>
                 <div class="radio__container">
@@ -99,14 +99,14 @@
             </div>
           </div>
           <div class="form__row">
-            <div class="form__column">
+            <div class="form__column animation animation_password">
               <label class="input">
                 <div class="input__text">Password</div>
                 <input type="password" class="input__elem" name="password" required>
                 <div class="error"></div>
               </label>
             </div>
-            <div class="form__column">
+            <div class="form__column animation animation_confirmPassword">
               <label class="input">
                 <div class="input__text">Confirm Password</div>
                 <input type="password" class="input__elem" name="confirmPassword" required>
