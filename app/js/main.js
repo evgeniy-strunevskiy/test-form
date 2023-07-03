@@ -108,13 +108,15 @@ send.addEventListener("click", (event) => {
 
   async function sendData() {
     try {
-      let response = await fetch("http://localhost:3001/points", {
+      let response = await fetch("http://localhost:3001/point", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
       if (!response.ok) {
+        send.classList.add('reject')
+        console.log(send)
         throw new Error("Ошибка при отправке данных");
       }
 

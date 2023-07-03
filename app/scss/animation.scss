@@ -32,6 +32,12 @@
   }
 }
 
+.reject {
+  animation: reject 1s ease-in-out ;
+  animation-delay: .4s;
+
+}
+
 @keyframes intro {
   0% {
     opacity: 0;
@@ -42,4 +48,13 @@
     opacity: 1;
     top: 0;
   }
+}
+
+@keyframes reject {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
 }
