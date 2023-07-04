@@ -1,6 +1,8 @@
 .form {
   flex: 1;
   padding: 35px 18px 33px 23px;
+  position: relative;
+  overflow: hidden;
 }
 
 .form__title {
@@ -18,7 +20,7 @@
 .form__content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 11px;
 }
 
 

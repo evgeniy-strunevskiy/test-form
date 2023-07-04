@@ -108,7 +108,7 @@ send.addEventListener("click", (event) => {
 
   async function sendData() {
     try {
-      let response = await fetch("http://localhost:3001/point", {
+      let response = await fetch("http://localhost:3001/points", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -134,3 +134,7 @@ send.addEventListener("click", (event) => {
   }
 
 });
+
+// const path = document.querySelector('#shape')
+// const len = Math.round(path.getTotalLength())
+// console.log(len)
